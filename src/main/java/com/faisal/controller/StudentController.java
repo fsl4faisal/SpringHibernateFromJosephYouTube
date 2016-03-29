@@ -19,7 +19,7 @@ public class StudentController {
 	@Autowired
 	private StudentService studentService;
 
-	@RequestMapping("/index")
+	@RequestMapping({"/index","/"})
 	public String setupForm(Map<String, Object> map) {
 		Student student = new Student();
 		map.put("student", student);

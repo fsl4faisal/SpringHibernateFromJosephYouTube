@@ -2,41 +2,26 @@ package com.faisal.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 @Entity
-public class Student {
-	
-	@Id
-	@Column
-	@GeneratedValue(strategy=GenerationType.AUTO) //for autonumber
-	private int studentId;
+public class Student extends BaseEntity {
+
 	@Column
 	private String firstname;
 	@Column
 	private String lastname;
 	@Column
 	private int yearLevel;
-	
-	public Student(){}
 
-	public Student(int studentId, String firstname, String lastname,
-			int yearLevel) {
+	public Student() {
+	}
+
+	public Student(String firstname, String lastname, int yearLevel) {
 		super();
-		this.studentId = studentId;
+
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.yearLevel = yearLevel;
-	}
-
-	public int getStudentId() {
-		return studentId;
-	}
-
-	public void setStudentId(int studentId) {
-		this.studentId = studentId;
 	}
 
 	public String getFirstname() {
@@ -62,7 +47,5 @@ public class Student {
 	public void setYearLevel(int yearLevel) {
 		this.yearLevel = yearLevel;
 	}
-	
-	
 
 }
